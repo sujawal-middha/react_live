@@ -29,7 +29,7 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-        className={`flex items-center justify-between px-6 py-3 max-w-5xl w-full glass-pill transition-all duration-500 ${scrolled ? 'py-4 scale-95 opacity-90 hover:scale-100 hover:opacity-100' : ''}`}
+        className={`flex items-center justify-between px-8 py-3 max-w-6xl w-full glass-pill border-white/5 transition-all duration-500 ${scrolled ? 'py-2 scale-[0.98] bg-obsidian/80' : 'bg-white/5'}`}
       >
         {/* Logo */}
         <Link to="hero" smooth={true} className="flex items-center gap-3 cursor-pointer group">
@@ -64,7 +64,7 @@ const Navbar = () => {
             ))}
           </ul>
           <Link to="contact" smooth={true} offset={-100}>
-            <button className="px-5 py-2.5 rounded-full bg-white text-obsidian font-bold text-xs uppercase tracking-tighter hover:bg-indigo-vibrant hover:text-white transition-all duration-300">
+            <button className="px-5 py-2.5 rounded-full bg-white text-slate-950 font-black text-[10px] uppercase tracking-widest hover:bg-indigo-vibrant hover:text-white transition-all duration-300 shadow-md">
               Consult Now
             </button>
           </Link>
