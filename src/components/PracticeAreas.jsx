@@ -12,25 +12,31 @@ const PracticeAreas = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { type: "spring", stiffness: 100, damping: 15 } 
+    }
   };
 
   return (
-    <section id="practice" className="py-24 bg-navy-light/30 border-y border-glass-border">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="practice" className="py-32 relative aura-bg">
+      <div className="container mx-auto px-6 md:px-12 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-24"
         >
-          <h2 className="text-4xl font-serif font-bold text-white mb-4">Practice Areas</h2>
-          <div className="w-20 h-1 bg-blue-accent mx-auto rounded-full"></div>
+          <span className="text-indigo-400 font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Expertise</span>
+          <h2 className="text-5xl md:text-6xl font-black text-white leading-tight">Practice Areas</h2>
+          <div className="w-20 h-1.5 bg-gradient-to-r from-indigo-vibrant to-cyan-vibrant mx-auto rounded-full mt-6"></div>
         </motion.div>
 
-        <motion.div
+        <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -38,18 +44,30 @@ const PracticeAreas = () => {
           viewport={{ once: true, margin: "-50px" }}
         >
           {lawyerData.practiceAreas.map((area) => (
-            <motion.div
+            <motion.div 
               key={area.id}
               variants={itemVariants}
-              className="glass-panel p-8 group hover:bg-blue-accent/10 transition-colors duration-300 cursor-default"
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="glass-card p-10 group relative overflow-hidden"
             >
-              <div className="w-14 h-14 bg-navy/50 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 group-hover:text-blue-400 transition-all duration-300 border border-glass-border">
-                <area.icon className="text-2xl text-blue-accent group-hover:text-blue-400" />
+              {/* Card Aura */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-indigo-500/20 flex items-center justify-center mb-8 border border-white/5 group-hover:rotate-6 transition-transform duration-500">
+                <area.icon className="text-3xl text-indigo-400 group-hover:text-white transition-colors duration-300" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 tracking-wide">{area.title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm">
+              
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-aura transition-all duration-300">
+                {area.title}
+              </h3>
+              
+              <p className="text-slate-400 leading-relaxed group-hover:text-slate-200 transition-colors duration-300">
                 {area.description}
               </p>
+              
+              <div className="mt-8 flex items-center gap-2 text-indigo-400 font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                Learn More <span>→</span>
+              </div>
             </motion.div>
           ))}
         </motion.div>

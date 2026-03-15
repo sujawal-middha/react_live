@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { HiMenu, HiX } from 'react-icons/hi';
+import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { motion, AnimatePresence } from 'framer-motion';
 import { lawyerData } from '../data/lawyerData';
 
 const Navbar = () => {
@@ -9,7 +10,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -17,73 +18,97 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'About', to: 'about' },
-    { name: 'Practice Areas', to: 'practice' },
+    { name: 'Practice', to: 'practice' },
     { name: 'Experience', to: 'experience' },
     { name: 'Testimonials', to: 'testimonials' },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass-panel py-3' : 'bg-transparent py-5'}`}>
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+    <div className="fixed w-full top-6 z-50 px-4 flex justify-center">
+      <motion.nav 
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+        className={`flex items-center justify-between px-6 py-3 max-w-5xl w-full glass-pill transition-all duration-500 ${scrolled ? 'py-4 scale-95 opacity-90 hover:scale-100 hover:opacity-100' : ''}`}
+      >
         {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-dark to-blue-accent flex items-center justify-center text-white font-bold text-lg shadow-lg">
+        <Link to="hero" smooth={true} className="flex items-center gap-3 cursor-pointer group">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-vibrant to-cyan-vibrant flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:rotate-12 transition-transform duration-300">
             {lawyerData.personalInfo.initials}
           </div>
-          <span className="text-xl font-bold tracking-wide text-white hidden sm:block">
-            {lawyerData.personalInfo.name}
-          </span>
-        </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-bold tracking-tight text-white leading-none">
+              {lawyerData.personalInfo.name}
+            </span>
+            <span className="text-[10px] text-indigo-300/80 font-medium uppercase tracking-widest mt-0.5">
+              Advocate
+            </span>
+          </div>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <ul className="flex gap-6">
+          <ul className="flex gap-8">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
                   to={link.to}
                   smooth={true}
-                  duration={500}
-                  className="text-gray-300 hover:text-white cursor-pointer transition-colors text-sm uppercase tracking-wider font-medium"
+                  offset={-100}
+                  className="text-slate-300 hover:text-white cursor-pointer transition-all text-sm font-semibold relative group"
                 >
                   {link.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-vibrant transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
             ))}
           </ul>
-          <Link to="contact" smooth={true} duration={500}>
-            <button className="btn-primary text-sm py-2 px-5">
-              Book Consultation
+          <Link to="contact" smooth={true} offset={-100}>
+            <button className="px-5 py-2.5 rounded-full bg-white text-obsidian font-bold text-xs uppercase tracking-tighter hover:bg-indigo-vibrant hover:text-white transition-all duration-300">
+              Consult Now
             </button>
           </Link>
         </div>
 
         {/* Mobile Menu Btn */}
         <div className="md:hidden flex items-center">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-2xl text-gray-200">
-            {isOpen ? <HiX /> : <HiMenu />}
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="text-2xl text-slate-200 p-2 hover:bg-white/10 rounded-full transition-colors"
+          >
+            {isOpen ? <HiX /> : <HiMenuAlt3 />}
           </button>
         </div>
-      </div>
+      </motion.nav>
 
-      {/* Mobile Nav */}
-      <div className={`md:hidden absolute top-full left-0 w-full glass-panel flex flex-col items-center py-6 gap-6 transition-transform duration-300 origin-top ${isOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'}`}>
-        {navLinks.map((link) => (
-          <Link
-            key={link.name}
-            to={link.to}
-            smooth={true}
-            onClick={() => setIsOpen(false)}
-            className="text-gray-200 hover:text-blue-400 font-medium text-lg cursor-pointer"
+      {/* Mobile Nav Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="absolute top-20 left-4 right-4 glass-card p-8 md:hidden flex flex-col items-center gap-6 shadow-2xl"
           >
-            {link.name}
-          </Link>
-        ))}
-        <Link to="contact" smooth={true} onClick={() => setIsOpen(false)}>
-          <button className="btn-primary w-full">Book Consultation</button>
-        </Link>
-      </div>
-    </nav>
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.to}
+                smooth={true}
+                offset={-100}
+                onClick={() => setIsOpen(false)}
+                className="text-slate-200 hover:text-indigo-400 font-bold text-xl cursor-pointer transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link to="contact" smooth={true} offset={-100} onClick={() => setIsOpen(false)} className="w-full">
+              <button className="btn-aura w-full">Book Consultation</button>
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
