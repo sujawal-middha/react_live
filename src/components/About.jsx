@@ -18,26 +18,26 @@ const About = () => {
             className="relative"
           >
             <div className="absolute -top-10 -left-10 w-24 h-24 bg-indigo-500/10 rounded-full blur-3xl"></div>
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight">
+            <h2 className="text-5xl md:text-6xl font-black text-obsidian mb-8 leading-tight">
               A Legacy of <span className="text-aura">Justice</span> <br /> & Legal Strategy.
             </h2>
             <div className="w-24 h-2 bg-gradient-to-r from-indigo-vibrant to-cyan-vibrant rounded-full mb-10"></div>
             
-            <p className="text-xl text-slate-300 leading-relaxed mb-8">
+            <p className="text-xl text-slate-700 leading-relaxed mb-8">
               I am a practicing advocate with extensive experience in litigation, legal advisory, and dispute resolution. Over the years I have represented individuals, businesses, and organizations in a wide range of legal matters.
             </p>
-            <p className="text-slate-400 leading-relaxed mb-10">
+            <p className="text-slate-500 leading-relaxed mb-10">
               My practice focuses on delivering clear legal guidance, protecting my clients' rights, and ensuring efficient resolution of disputes through court representation, negotiation, and legal strategy.
             </p>
 
             <div className="grid grid-cols-2 gap-8">
               <div className="flex flex-col">
-                <span className="text-4xl font-black text-white">500+</span>
-                <span className="text-xs text-indigo-400 font-bold uppercase tracking-widest mt-2">Cases Handled</span>
+                <span className="text-4xl font-black text-obsidian">500+</span>
+                <span className="text-xs text-indigo-600 font-bold uppercase tracking-widest mt-2">Cases Handled</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-4xl font-black text-white">95%</span>
-                <span className="text-xs text-indigo-400 font-bold uppercase tracking-widest mt-2">Success Rate</span>
+                <span className="text-4xl font-black text-obsidian">95%</span>
+                <span className="text-xs text-indigo-600 font-bold uppercase tracking-widest mt-2">Success Rate</span>
               </div>
             </div>
           </motion.div>
@@ -50,9 +50,9 @@ const About = () => {
             className="glass-card p-1 relative group"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-            <div className="bg-obsidian/80 backdrop-blur-3xl p-12 rounded-2xl relative overflow-hidden">
+            <div className="bg-white/80 backdrop-blur-3xl p-12 rounded-2xl relative overflow-hidden">
                <FaScaleUnbalanced className="absolute -bottom-10 -right-10 text-[250px] text-indigo-500/5 rotate-12" />
-               <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Strategic Approach</h3>
+               <h3 className="text-2xl font-bold text-obsidian mb-6 relative z-10">Strategic Approach</h3>
                <ul className="space-y-6 relative z-10">
                  {[
                    { title: 'Case Analysis', text: 'Thorough research and strategic planning for every matter.' },
@@ -63,10 +63,10 @@ const About = () => {
                      <div className="w-6 h-6 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0 mt-1">
                        <div className="w-2 h-2 rounded-full bg-indigo-400"></div>
                      </div>
-                     <div>
-                       <h4 className="text-white font-bold">{item.title}</h4>
-                       <p className="text-sm text-slate-400 mt-1">{item.text}</p>
-                     </div>
+                      <div>
+                        <h4 className="text-obsidian font-bold">{item.title}</h4>
+                        <p className="text-sm text-slate-500 mt-1">{item.text}</p>
+                      </div>
                    </li>
                  ))}
                </ul>

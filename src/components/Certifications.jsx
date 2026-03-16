@@ -14,8 +14,8 @@ const Certifications = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-24"
         >
-          <span className="text-indigo-400 font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Credentials</span>
-          <h2 className="text-5xl md:text-6xl font-black text-white">Education & Licensing</h2>
+          <span className="text-indigo-600 font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Credentials</span>
+          <h2 className="text-5xl md:text-6xl font-black text-obsidian">Education & Licensing</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -36,24 +36,31 @@ const Certifications = () => {
                   {cert.title.includes('Bar') ? <FaShieldHalved /> : <FaGraduationCap />}
                 </div>
                 {cert.year && (
-                  <span className="text-[10px] font-black px-4 py-1.5 bg-white/5 text-indigo-300 rounded-full border border-white/5 uppercase tracking-widest">
+                   <span className="text-[10px] font-black px-4 py-1.5 bg-obsidian/5 text-indigo-600 rounded-full border border-obsidian/5 uppercase tracking-widest">
                     {cert.year}
                   </span>
                 )}
               </div>
               
-              <h3 className="text-2xl font-black text-white mb-3 leading-tight group-hover:text-aura transition-all">
+              <h3 className="text-2xl font-black text-obsidian mb-3 leading-tight group-hover:text-aura transition-all">
                 {cert.title}
               </h3>
-              <p className="text-slate-400 font-bold text-sm tracking-wide">
+              <p className="text-slate-500 font-bold text-sm tracking-wide">
                 {cert.institution}
               </p>
 
-              <div className="mt-10 flex items-center gap-3">
-                 <button className="text-xs font-black uppercase tracking-[0.2em] text-indigo-400 hover:text-white transition-colors flex items-center gap-2 group/btn">
+              {cert.verifyUrl && (
+                <div className="mt-10 flex items-center gap-3">
+                  <a 
+                    href={cert.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-black uppercase tracking-[0.2em] text-indigo-600 hover:text-obsidian transition-colors flex items-center gap-2 group/btn"
+                  >
                     Verify Link <span className="translate-x-0 group-hover/btn:translate-x-1 transition-transform">→</span>
-                 </button>
-              </div>
+                  </a>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

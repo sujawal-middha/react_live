@@ -13,8 +13,8 @@ const Courts = () => {
            viewport={{ once: true }}
            className="mb-16"
         >
-          <span className="text-indigo-400 font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Qualified To Practice</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">Courts of Practice</h2>
+          <span className="text-indigo-600 font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Qualified To Practice</span>
+          <h2 className="text-4xl md:text-5xl font-black text-obsidian leading-tight">Courts of Practice</h2>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-6">
@@ -31,7 +31,7 @@ const Courts = () => {
               <div className="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all">
                 <FaGavel />
               </div>
-              <span className="text-slate-200 font-bold tracking-wide">{court}</span>
+              <span className="text-obsidian font-bold tracking-wide">{court}</span>
             </motion.div>
           ))}
         </div>

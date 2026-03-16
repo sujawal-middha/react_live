@@ -112,13 +112,15 @@ export const lawyerData = {
       id: 1,
       title: "LLB – Bachelor of Laws",
       institution: "University of Delhi",
-      year: "2013 – 2016"
+      year: "2013 – 2016",
+      verifyUrl: "https://www.du.ac.in/"
     },
     {
       id: 2,
       title: "Bar Council Registration",
       institution: "Bar Council of Delhi",
-      year: "Enrollment No: D/1234/2017"
+      year: "Enrollment No: D/1234/2017",
+      verifyUrl: "https://delhibarcouncil.com/"
     },
     {
       id: 3,

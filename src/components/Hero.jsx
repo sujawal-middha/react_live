@@ -20,7 +20,7 @@ const Hero = () => {
               <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
               {title}
             </span>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-[0.9] text-white">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-[0.9] text-obsidian">
               Delivering <br />
               <span className="text-aura">Trusted Legal</span> <br />
               Solutions.
@@ -31,7 +31,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed max-w-xl"
+            className="text-xl md:text-2xl text-slate-700 font-medium leading-relaxed max-w-xl"
           >
             {subtext}
           </motion.p>
@@ -40,7 +40,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-slate-400 text-lg leading-relaxed max-w-xl"
+            className="text-slate-500 text-lg leading-relaxed max-w-xl"
           >
             {description}
           </motion.p>
@@ -82,7 +82,7 @@ const Hero = () => {
                 alt="Advocate Portrait" 
                 className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent"></div>
             </div>
           </div>
 
@@ -93,8 +93,8 @@ const Hero = () => {
             transition={{ delay: 1.2, duration: 0.8 }}
             className="absolute -bottom-8 -right-8 glass-pill p-6 flex flex-col items-center justify-center border-indigo-500/50 shadow-indigo-500/20 shadow-2xl animate-bounce-slow"
           >
-            <span className="text-4xl font-black text-white leading-none">8+</span>
-            <span className="text-[10px] text-indigo-300 font-bold uppercase tracking-widest mt-1 text-center">
+            <span className="text-4xl font-black text-obsidian leading-none">8+</span>
+            <span className="text-[10px] text-indigo-600 font-bold uppercase tracking-widest mt-1 text-center">
               Years of <br /> Excellence
             </span>
           </motion.div>

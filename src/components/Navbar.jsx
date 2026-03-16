@@ -29,7 +29,7 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-        className={`flex items-center justify-between px-8 py-3 max-w-6xl w-full glass-pill border-white/5 transition-all duration-500 ${scrolled ? 'py-2 scale-[0.98] bg-obsidian/80' : 'bg-white/5'}`}
+        className={`flex items-center justify-between px-8 py-3 max-w-6xl w-full glass-pill transition-all duration-500 ${scrolled ? 'py-2 scale-[0.98] bg-white/90 shadow-lg' : 'bg-white/40'}`}
       >
         {/* Logo */}
         <Link to="hero" smooth={true} className="flex items-center gap-3 cursor-pointer group">
@@ -37,10 +37,10 @@ const Navbar = () => {
             {lawyerData.personalInfo.initials}
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-bold tracking-tight text-white leading-none">
+            <span className="text-sm font-bold tracking-tight text-obsidian leading-none">
               {lawyerData.personalInfo.name}
             </span>
-            <span className="text-[10px] text-indigo-300/80 font-medium uppercase tracking-widest mt-0.5">
+            <span className="text-[10px] text-indigo-600 font-medium uppercase tracking-widest mt-0.5">
               Advocate
             </span>
           </div>
@@ -55,7 +55,7 @@ const Navbar = () => {
                   to={link.to}
                   smooth={true}
                   offset={-100}
-                  className="text-slate-300 hover:text-white cursor-pointer transition-all text-sm font-semibold relative group"
+                  className="text-slate-600 hover:text-obsidian cursor-pointer transition-all text-sm font-semibold relative group"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-vibrant transition-all duration-300 group-hover:w-full"></span>
@@ -64,7 +64,7 @@ const Navbar = () => {
             ))}
           </ul>
           <Link to="contact" smooth={true} offset={-100}>
-            <button className="px-5 py-2.5 rounded-full bg-white text-slate-950 font-black text-[10px] uppercase tracking-widest hover:bg-indigo-vibrant hover:text-white transition-all duration-300 shadow-md">
+            <button className="px-5 py-2.5 rounded-full bg-obsidian text-white font-black text-[10px] uppercase tracking-widest hover:bg-indigo-vibrant hover:scale-105 transition-all duration-300 shadow-md">
               Consult Now
             </button>
           </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
         <div className="md:hidden flex items-center">
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="text-2xl text-slate-200 p-2 hover:bg-white/10 rounded-full transition-colors"
+            className="text-2xl text-obsidian p-2 hover:bg-obsidian/5 rounded-full transition-colors"
           >
             {isOpen ? <HiX /> : <HiMenuAlt3 />}
           </button>
@@ -97,7 +97,7 @@ const Navbar = () => {
                 smooth={true}
                 offset={-100}
                 onClick={() => setIsOpen(false)}
-                className="text-slate-200 hover:text-indigo-400 font-bold text-xl cursor-pointer transition-colors"
+                className="text-slate-700 hover:text-indigo-600 font-bold text-xl cursor-pointer transition-colors"
               >
                 {link.name}
               </Link>

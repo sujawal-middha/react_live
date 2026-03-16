@@ -31,8 +31,8 @@ const PracticeAreas = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-24"
         >
-          <span className="text-indigo-400 font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Expertise</span>
-          <h2 className="text-5xl md:text-6xl font-black text-white leading-tight">Practice Areas</h2>
+          <span className="text-indigo-600 font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Expertise</span>
+          <h2 className="text-5xl md:text-6xl font-black text-obsidian leading-tight">Practice Areas</h2>
           <div className="w-20 h-1.5 bg-gradient-to-r from-indigo-vibrant to-cyan-vibrant mx-auto rounded-full mt-6"></div>
         </motion.div>
 
@@ -57,17 +57,14 @@ const PracticeAreas = () => {
                 <area.icon className="text-3xl text-indigo-400 group-hover:text-white transition-colors duration-300" />
               </div>
               
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-aura transition-all duration-300">
+              <h3 className="text-2xl font-bold text-obsidian mb-4 group-hover:text-aura transition-all duration-300">
                 {area.title}
               </h3>
               
-              <p className="text-slate-400 leading-relaxed group-hover:text-slate-200 transition-colors duration-300">
+              <p className="text-slate-500 leading-relaxed group-hover:text-obsidian transition-colors duration-300">
                 {area.description}
               </p>
               
-              <div className="mt-8 flex items-center gap-2 text-indigo-400 font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                Learn More <span>→</span>
-              </div>
             </motion.div>
           ))}
         </motion.div>

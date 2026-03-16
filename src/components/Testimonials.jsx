@@ -16,8 +16,8 @@ const Testimonials = () => {
            viewport={{ once: true }}
            className="text-center mb-24"
         >
-          <span className="text-indigo-400 font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Feedback</span>
-          <h2 className="text-5xl md:text-6xl font-black text-white">Client Voices</h2>
+          <span className="text-indigo-600 font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Feedback</span>
+          <h2 className="text-5xl md:text-6xl font-black text-obsidian">Client Voices</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -31,7 +31,7 @@ const Testimonials = () => {
             >
               <FaQuoteRight className="text-6xl text-indigo-500/10 absolute top-12 right-12 group-hover:text-indigo-400/20 transition-colors duration-500" />
               
-              <p className="text-xl text-slate-200 font-medium leading-relaxed italic mb-10 relative z-10">
+              <p className="text-xl text-slate-700 font-medium leading-relaxed italic mb-10 relative z-10">
                 "{test.quote}"
               </p>
               
@@ -40,10 +40,10 @@ const Testimonials = () => {
                   {test.client.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-lg font-black text-white tracking-wide">{test.client}</h4>
+                  <h4 className="text-lg font-black text-obsidian tracking-wide">{test.client}</h4>
                   <div className="flex items-center gap-2 mt-1">
                      <span className="w-2 h-2 rounded-full bg-green-400"></span>
-                     <span className="text-[10px] text-indigo-300 font-black uppercase tracking-widest">Verified Client</span>
+                      <span className="text-[10px] text-indigo-600 font-black uppercase tracking-widest">Verified Client</span>
                   </div>
                 </div>
               </div>
