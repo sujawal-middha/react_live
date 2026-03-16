@@ -40,7 +40,7 @@ const Experience = () => {
                 {/* Content Side */}
                 <div className="w-full md:w-1/2 pl-20 md:pl-0">
                   <div className={`glass-card p-10 relative group ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-black uppercase tracking-widest mb-6 border border-indigo-500/20">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-600/10 text-indigo-600 text-xs font-black uppercase tracking-widest mb-6 border border-indigo-500/10">
                       {exp.period}
                     </span>
                     <h3 className="text-3xl font-black text-obsidian leading-tight mb-2 group-hover:text-aura transition-colors">{exp.role}</h3>

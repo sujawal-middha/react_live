@@ -53,8 +53,8 @@ const PracticeAreas = () => {
               {/* Card Aura */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-indigo-500/20 flex items-center justify-center mb-8 border border-white/5 group-hover:rotate-6 transition-transform duration-500">
-                <area.icon className="text-3xl text-indigo-400 group-hover:text-white transition-colors duration-300" />
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-indigo-500/20 flex items-center justify-center mb-8 border border-indigo-500/10 group-hover:rotate-6 transition-transform duration-500">
+                <area.icon className="text-3xl text-indigo-600 group-hover:text-indigo-700 transition-colors duration-300" />
               </div>
               
               <h3 className="text-2xl font-bold text-obsidian mb-4 group-hover:text-aura transition-all duration-300">
